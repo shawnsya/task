@@ -1,15 +1,27 @@
 #include <string.h>
 // 数组索引
-int sequence(int number[]){
+int sequence(int number[])
+{
 	int n = strlen(number);
 	int i, temp;
-	for (i = 0; i < n; i++, n--){
+	for (i = 0; i < n/2 ; i++)
+	{
 		temp = number[i];
 		number[i] = number[n-i-1];
 		number[n-i-1] = temp;
 		
+	}	
+}
+main()
+{
+	int i;
+	int a[]= {1, 2, 3, 4, 5};
+	sequence(a);
+	for (i = 0; i < 5; i++){
+		printf("%d",a[i]);
 	}
-	
+		
+	printf("\n");
 }
 // 指针版本
 void swap(int number[]){
