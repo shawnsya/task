@@ -1,8 +1,7 @@
 #include <string.h>
 // 数组索引
-int sequence(int number[])
+int sequence(int number[], int n)
 {
-	int n = strlen(number);
 	int i, temp;
 	for (i = 0; i < n/2 ; i++)
 	{
@@ -16,7 +15,7 @@ main()
 {
 	int i;
 	int a[]= {1, 2, 3, 4, 5};
-	sequence(a);
+	sequence(a,5);
 	for (i = 0; i < 5; i++){
 		printf("%d",a[i]);
 	}
