@@ -1,13 +1,12 @@
 //
 //  main.c
-//  ArratBubblesort
+//  Array-Bubblesort
 //
-//  Created by Shawn on 2017/10/22.
+//  Created by Shawn on 2017/10/27.
 //  Copyright © 2017年 Shawn. All rights reserved.
 //
-//  Bubblesort
-#include <stdio.h>
 
+#include <stdio.h>
 void bubble_sort(int a[], int n){
     
     int i, j, temp;
@@ -21,8 +20,7 @@ void bubble_sort(int a[], int n){
         }
     }
 }
-    
-    
+
 
 
 int main(int argc, const char * argv[]) {
@@ -47,7 +45,10 @@ int main(int argc, const char * argv[]) {
     
     
     
-
+    
     
     return 0;
 }
+
+
+
