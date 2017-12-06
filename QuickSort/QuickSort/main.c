@@ -28,18 +28,31 @@ int main(int argc, const char * argv[]) {
     for (int i = 0; i < size; i++) {
         a[i] = rand() % 100;
     }
+    printf("My qsort:\n");
     myQuickSort(a, size, sizeof(a[0]), cmp);
     for (int i = 0; i < size; i++) {
         printf("%d\t", a[i]);
     }
     printf("\n");
-
+    printf("qsort:\n");
+    qsort(a, size, sizeof(a[0]), cmp);
+    for (int i = 0; i < size; i++) {
+        printf("%d\t", a[i]);
+    }
+    printf("\n");
     //*********************／／
     // 字符串排序
+    
+    
     char test[] = "asdlkfjewhgsf";
     int sizeOfChar = strlen(test);
+    printf("My qsort:\n");
     myQuickSort(test, sizeOfChar, sizeof(test[0]), cmpChar);
     printf("%s\n",test);
+    
+    printf("qsort:\n");
+    qsort(test, sizeOfChar, sizeof(test[0]), cmpChar);
+    printf("%s\n", test);
     // ********************//
     
     

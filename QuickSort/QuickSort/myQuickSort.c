@@ -7,45 +7,33 @@
 //
 
 #include <stdio.h>
-void myQuickSort(void * base, size_t num, size_t size, int (*comparator)(const void *, const void *)){
-    int number = (int)num;
-    int i, j, temp, min, max;
-    if (*comparator > 0) {
-        printf("Option A\n");
-        for (i = 0; i < number; i++) {
-            min = i;
-            for (j = i + 1; j < number; j++) {
-                if ( *((int *)base + min) > *((int *)base + j) ) {
-                    min = j;
-                }
-            }
-            if (min != i) {
-                temp = *((int *)base + min);
-                *((int *)base + min) = *((int *)base + i);
-                *((int *)base + i) = temp;
-            }
-        }
-    }
-
-
-    else{
-        for (i = 0; i < number; i++) {
-            printf("Option B\n");
-            max = i;
-            for (j = i + 1; j < number; j++) {
-                if ( *((int *)base + max) < *((int *)base + i) ) {
-                    max = j;
-                }
-            }
-            if (max != i) {
-                temp = *((int *)base + max);
-                *((int *)base + max) = *((int *)base + i);
-                *((int *)base + i) = temp;
-                
-        
-    }
-
-        }
-        
+void exchangeVoid(void * from, void *  to, size_t size){
+    char * fromPtr = from;
+    char * toPtr = to;
+    char temp;
+    for (int i = 0;  i < size; i++) {
+        temp =  *(fromPtr + i);
+        *(fromPtr + i) = *(toPtr + i);
+        *(toPtr + i) = temp;
     }
 }
+
+void myQuickSort(void * base, size_t num, size_t size, int (*comparator)(const void *, const void *)){
+    int i, j, min;
+// 选择排序
+//  找出最小值 min 与 j 比较
+    for (i = 0; i < num; i++) {
+        min = i;
+        for (j = i + 1; j < num; j++) {
+            if (comparator(base + size * min, base + size * j) > 0) {
+                min = j;
+            }
+        // 进行交换
+        if (min != i) {
+            exchangeVoid(base + size * min, base + size * i, size);
+            }
+        }
+    }
+
+}
+
