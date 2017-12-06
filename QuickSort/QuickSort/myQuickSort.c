@@ -28,6 +28,7 @@ void myQuickSort(void * base, size_t num, size_t size, int (*comparator)(const v
             if (comparator(base + size * min, base + size * j) > 0) {
                 min = j;
             }
+        }
         // 进行交换
         if (min != i) {
             exchangeVoid(base + size * min, base + size * i, size);
@@ -35,5 +36,5 @@ void myQuickSort(void * base, size_t num, size_t size, int (*comparator)(const v
         }
     }
 
-}
+
 
